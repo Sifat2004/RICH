@@ -50,24 +50,33 @@ RICH/
 
 ### Prerequisites
 
-- A GitHub account
+- Access to the shared GitHub account: **richincsad@gmail.com**
 - Basic knowledge of HTML, CSS, and JavaScript
-- Access to the repository (ask Zarif to add you as a collaborator)
+- **Note**: This account has 2FA enabled (security codes go to Zarif's iPad)
 
 ### Quick Start
 
-1. **Get Access**
-   - Ask Zarif to add you as a collaborator
-   - Accept the GitHub invitation via email
+1. **Access the Repository**
+   - **Shared Account**: richincsad@gmail.com
+   - **Repository**: https://github.com/richinc-org/RICH
+   - **Bookmark this page** for easy access
 
-2. **Access the Repository**
-   - Go to: https://github.com/richinc-org/RICH
-   - Bookmark for easy access
+2. **Login Process**
+   - Use the shared account credentials
+   - **2FA Code**: Contact Zarif for the security code (sent to iPad)
+   - **Device Trust**: Consider trusting devices to reduce 2FA prompts
 
 3. **Start Editing**
    - Navigate to the `docs/` folder
    - Find the file you want to edit
    - Click the pencil icon to edit
+
+### ⚠️ Important Notes
+
+- **Shared Account**: All interns use the same GitHub account (richincsad@gmail.com)
+- **2FA Security**: Security codes are sent to Zarif's iPad
+- **Device Management**: Consider trusting frequently used devices
+- **Communication**: Coordinate with Zarif for 2FA codes when needed
 
 ## ✏️ Contributing
 
@@ -162,6 +171,29 @@ This repository contains **only frontend files** for security reasons:
 2. **Check the commit history** on GitHub
 3. **Ask Zarif or other team members**
 4. **We can always revert to a previous version**
+
+### Common Issues & Solutions
+
+#### 🔐 2FA Access Issues
+- **Problem**: GitHub asks for security code on new devices
+- **Solution**: Contact Zarif for the 2FA code (sent to iPad)
+- **Prevention**: Trust frequently used devices to reduce prompts
+
+#### 📱 Device Management
+- **Trusted Devices**: Add your work computer as a trusted device
+- **Session Management**: Stay logged in on shared devices
+- **Communication**: Coordinate login times to avoid conflicts
+
+#### 🔑 Account Access
+- **Shared Account**: richincsad@gmail.com
+- **Credentials**: Available in the Notion dashboard
+- **Backup**: Keep credentials in a secure, accessible location
+
+### Getting Help
+
+- **2FA Issues**: Contact Zarif for security codes
+- **Technical Problems**: Check commit history or ask team members
+- **Access Problems**: Verify credentials in Notion dashboard
 
 ### Useful Links
 
