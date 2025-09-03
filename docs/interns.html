@@ -229,6 +229,115 @@
         padding-right: 55px;
       }
     }
+
+    /* --- Default styles for mobile --- */
+    .banner {
+          display: flex;
+          /* Change to a vertical layout */
+          flex-direction: row; 
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          background: white;
+          /* Adjust gap for vertical stacking */
+          gap: 1.5rem; 
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .globe {
+          /* Slightly smaller globe for mobile */
+          width: 100px;
+          height: 100px; 
+          animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .divider {
+          /* Change to a vertical divider for mobile */
+          width: 1px; 
+          height: 2px;
+          background: #888;
+          border-radius: 4px;
+        }
+
+        .svg-image {
+          width: 200px; 
+          height: auto;
+          margin-top: 10px;
+        } */ 
+       
+        .rich-line {
+          font-size: 10rem; /* Slightly smaller font for mobile */
+        }
+
+        /* --- Media Query for Desktops (screens wider than 768px) --- */
+        @media (min-width: 768px) {
+          .banner {
+            /* Switch back to horizontal layout */
+            flex-direction: row; 
+            gap: 2rem;
+          }
+
+          .globe {
+            /* Restore original globe size */
+            width: 150px;
+            height: 150px;
+          }
+
+          .divider {
+            /* Switch back to a vertical divider */
+            width: 3px;
+            height: 80px; 
+            border-radius: 4px;
+          }
+
+          .svg-image {
+          width: 280px; 
+          height: auto;
+          margin-top: 10px;
+        } */ 
+
+        .rich-line {
+          /* Restore original font size */
+          font-size: 3rem; 
+        }
+        }
+	      .social-sidebar {
+            position: fixed; /* This is the key property that makes it "stick" */
+            top: 50%; /* Positions it vertically in the middle of the screen */
+            left: 50px; /* Positions it from the left edge of the screen */
+            transform: translateY(-50%); /* This perfectly centers it vertically */
+            z-index: 1000; /* Ensures it stays on top of other page content */
+            
+            display: flex;
+            flex-direction: column; /* Stacks the icons on top of each other */
+            gap: 10px; /* Adds space between the icons */
+            
+            background-color: #0e0101e6;
+            padding: 15px 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(232, 226, 226, 0.828);
+            margin-top: 110px;
+        }
+
+        /* Styling for the individual icon links */
+        .social-sidebar a {
+            color: #fff5f5; /* Icon color */
+            font-size: 24px; /* Icon size */
+            transition: transform 0.2s ease-in-out, color 0.2s;
+        }
+
+        /* Adds a nice effect when you hover over the icons */
+        .social-sidebar a:hover {
+            color: #007bff; /* Change color on hover */
+            transform: scale(1.2); /* Make the icon slightly larger */
+        }
+	
+
   </style>
 
 </head>
@@ -254,7 +363,7 @@
 
       <div class="container-fluid">
 
-        <div class="text-center pics_in_a_row">
+        <!-- <div class="text-center pics_in_a_row">
           <a href="https://www.instagram.com/p/CqocMt_PwZ3/?utm_source=ig_web_button_share_sheet">
             <img class="img-fluid top" src="3decade.png"
               href="https://www.instagram.com/p/CqocMt_PwZ3/?utm_source=ig_web_button_share_sheet" alt="..." width="200"
@@ -266,16 +375,24 @@
           <a href="https://www.richinc.org/RICH/rich_new_vision/rich_new_vision.html">
             <img class="img-fluid top" src="nvl.png" alt="..." width="200" height="187">
           </a>
-        </div>
+        </div> --->
 
-
-        <div class="icon-links">
-          <a href="https://www.instagram.com/richincstudents/" target="_blank"><i class="fa fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/reach-into-cultural-heights/" target="_blank"><i
-              class="fa fa-linkedin-square"></i></a>
-          <a href="https://www.youtube.com/channel/UCqAvWoYXzpvOtIstzJ8LBBg?view_as=subscriber" target="_blank"><i
-              class="fa fa-youtube-square"></i></a>
+      <div class="banner">
+        <img src="brand-globe.png" alt="RICH Globe" class="globe">
+        <div class="divider"></div>
+        <div class="text">
+          <img src="images/rich-logo.svg" class="svg-image" alt="RICH">
         </div>
+      </div>
+
+      <!-- <div class="icon-links">
+        <a href="https://www.instagram.com/richincstudents/" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/reach-into-cultural-heights/" target="_blank"><i
+            class="fa fa-linkedin-square"></i></a>
+        <a href="https://www.youtube.com/channel/UCqAvWoYXzpvOtIstzJ8LBBg?view_as=subscriber" target="_blank"><i
+            class="fa fa-youtube-square"></i></a>
+      </div>  -->
+
 
         <div class="site-navbar bg-light">
           <div class="py-1">
@@ -297,7 +414,7 @@
                         <ul class="dropdown menu1">
                           <li><a href="mission.html">About Reach Into Cultural Heights</a></li>
                           <li><a href="board-directors.html">Board of Directors</a></li>
-                          <li><a href="interns.html">CUNY Interns</a></li>
+                          <li><a href="interns.html">College Interns</a></li>
                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                       </li>
@@ -381,15 +498,87 @@
   <hr class="hrrr">
   <h1 id="h1d">Joining Hands With College Interns</h1>
   <hr class="hrrr">
-  <br><br>
+  <br>
   <div class="tabs">
-    <button class="tablinks" onclick="openTab(event, '2025spring')"id="defaultOpen">2025-Spring</button>
-    <button class="tablinks" onclick="openTab(event, '2024summer')">2024-Summer</button>
-    <button class="tablinks" onclick="openTab(event, '2024spring')">2024-Spring</button>
-    <button class="tablinks" onclick="openTab(event, '2023')">2023-Summer</button>
-    <button class="tablinks" onclick="openTab(event, 'current')">2022-2023</button>
-    <button class="tablinks" onclick="openTab(event, 'pastone')">2021-2022</button>
-    <button class="tablinks" onclick="openTab(event, 'third')">2020-2021</button>
+    <button class="tablinks" onclick="openTab(event, '2025summer')"id="defaultOpen">Summer-2025</button>
+    <button class="tablinks" onclick="openTab(event, '2025spring')"id="defaultOpen">Spring-2025</button>
+    <button class="tablinks" onclick="openTab(event, '2024summer')">Summer-2024</button>
+    <button class="tablinks" onclick="openTab(event, '2024spring')">Spring-2024</button>
+    <button class="tablinks" onclick="openTab(event, '2023')">Summer-2023</button>
+    <button class="tablinks" onclick="openTab(event, 'current')">Academic Year 2022-2023</button>
+    <button class="tablinks" onclick="openTab(event, 'pastone')">Academic Year 2021-2022</button>
+    <button class="tablinks" onclick="openTab(event, 'third')">Academic Year 2020-2021</button>
+  </div>
+
+
+  <!--- Beginning of 2025 Summer page -->
+<div id="2025summer" class="tabcontent">
+  <div class="contain">
+    <!-- Mubashirul Islam -->
+    <div class="imagy">
+      <img class="imgWidBackground" style="width: 275px;" src="intern_images/mubashirul.jpeg"  alt="Mubashirul Islam"/>
+      <h1 class="evenboxinner">Mubashirul Islam</h1>
+    </div>
+    <div class="empty"></div>
+    <div class="texty">
+      <!-- Mubashirul's info here -->
+      <hr>
+      <h3>Front-End Developer</h3>
+      <hr>
+      <p style="word-spacing: normal; word-break: break-word; hyphens: auto; font-size: 15px; line-height: 1.5;">
+        Mubashirul Islam is a senior at Queens College, CUNY majoring in Computer Science and graduating in December 2025. During the Summer 2025 semester, he served as a Front-End Developer Intern 
+        at the RICH Organization, where he made key contributions to strengthening the organization’s digital infrastructure and enhancing its online presence. He transferred critical files 
+        from Cyberduck to GitHub to establish a secure backup system. Mubashirul worked with the executive director to improve the organization's brand identity and he modernized the RICH website. 
+        He contributed to the team creating an animated globe logo implemented across the website. By combining technical expertise with creative problem-solving, he played a vital role in optimizing both the functionality and visual presentation of RICH’s digital platforms.  
+        Mubashirul strengthened his front-end development and design skills and gained hands-on experience with website content management and Github version control. He also developed a deeper understanding of how technology supports strategic planning in nonprofit organizations.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="contain">
+    <div class="imagyy">
+      <img class="imgWidBackground" style="width: 275px;" src="intern_images/zarif.png" alt="Zarif Islam"/>
+      <h1 class="evenboxinner">Zarif Islam</h1>
+    </div>
+    <div class="empty"></div>
+    <div class="texty">
+      <!-- Zarif's info here -->
+      <hr>
+      <h3>Front-End Developer</h3>
+      <hr>
+      <p style="word-spacing: normal; word-break: break-word; hyphens: auto; font-size: 15px; line-height: 1.5;">
+        During summer semester 25, Zarif Islam a Computer Science major at Queens College, volunteered as a Web Developer Intern 
+        at the RICH Organization.  Zarif contributed to tech projects, offering technical and creative solutions. He assisted the 
+        tech team in fixing bugs on the website to improve user experience. He also spearheaded videography projects, interviewed 
+        board members and former interns, and edited and uploaded the final videos to the organization’s website and social media 
+        platforms.  With a passion for storytelling and problem-solving, Zarif brings a unique blend of creativity and tech skills 
+        to the IT projects he works on.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="contain">
+    <div class="imagy">
+      <img class="imgWidBackground" style="width: 275px;" src="intern_images/makhmud.jpeg" alt="Makhmud Balaev"/>
+      <h1 class="evenboxinner">Makhmud Balaev</h1>
+    </div>
+    <div class="empty"></div>
+    <div class="texty">
+      <!-- Makhmud's info here -->
+      <hr>
+      <h3>Web Developer</h3>
+      <hr>
+      <p style="word-spacing: normal; word-break: break-word; hyphens: auto; font-size: 15px; line-height: 1.5;">
+        Makhmud Balaev is a student attending  New York City College of Technology, majoring in Computer Systems Information. He joined RICH as a web development intern, 
+        where he contributed to the design and functionality of the organization’s online presence. Makhmud focused on improving 
+        the RICH organization’s home page, making it more engaging, accessible, and user friendly. With a strong interest in technology and problem solving, 
+        Makhmud is passionate about learning new skills, building creative solutions, and using technology to make a positive difference.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
   </div>
 
   <!-- Beginning of 2025 Spring page -->
@@ -530,7 +719,8 @@ passionate about using tech to solve real-world problems and is committed to mak
         user-friendly, dynamic websites. His journey in technology began with a fascination for coding and problem-solving, which led him to explore various
         programming languages and technologies. At RICH, Hashir has contributed to enhancing the website's functionality and user experience, implementing 
         new features and optimizing existing ones. His commitment to continuous learning and innovation drives him to stay updated with the latest industry trends.
-        Hashir embodies the RICH Principle of "I am Motivated" and is dedicated to making a positive impact through his technical skills and creativity.
+        Hashir embodies the RICH Principle of "I am Motivated" and is dedicated to making 
+        a positive impact through his technical skills and creativity.
       </p>
     </div>
   </div>
