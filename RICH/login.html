@@ -95,11 +95,16 @@
 		}
 	}
   </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/header.css">  
 </head>
 
 <body>
 
-  <div class="site-wrap">
+  <!-- <div class="site-wrap"> -->
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -110,7 +115,57 @@
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
 
-    <div style="top: 0px;" id="myLogo" class="site-navbar-wrap js-site-navbar bg-white">
+
+    <!--LOAD HEADER (Header Styles Contained in header.css)-->
+    <div id="header-container"></div>
+    <script>
+      fetch("header.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("header-container").innerHTML = html);
+    </script>
+
+
+     <!--SIGN IN CONTAINER-->
+    <div class="signin-container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Username">
+            </div>
+
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password">
+            </div>
+
+            <input type="submit" value="Login" class="btn solid">
+
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--MADE HIDDEN-->
+    <div style="top: 0px;" id="myLogo" class="site-navbar-wrap js-site-navbar bg-white" hidden>
 
 
 
@@ -230,8 +285,8 @@
       </div>
     </div>
 
-    <div id="logoHeight" style="height: 350px;"></div>
-    <div id="footerSpacing" class="text-center">
+    <div id="logoHeight" style="height: 350px;" hidden></div>
+    <div id="footerSpacing" class="text-center" hidden>
       <div id="piaContainer" class="container">
 
         <div class="col-md-8 mx-auto no-sidebar">
@@ -282,7 +337,7 @@
         </div>
       </div>
     </div>
-
+    <!--MADE HIDDEN ENDS-->
 
     <footer class="site-footer">
       <div class="container">
@@ -308,7 +363,7 @@
         </div>
       </div>
     </footer>
-    </div>
+    <!-- </div> -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
