@@ -228,10 +228,11 @@
     <!--LOAD HEADER (Header Styles Contained in header.css)-->
     <div id="header-container"></div>
     <script>
-      fetch("header.html")
-        .then(res => res.text())
-        .then(html => document.getElementById("header-container").innerHTML = html);
-    </script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {document.getElementById("header-container").outerHTML = html;
+      });
+  </script>
 
     <!--MADE HIDDEN-->
     <div id="myLogo" class="site-navbar-wrap js-site-navbar bg-white" hidden>
@@ -622,7 +623,7 @@ Phone: (123) 3240-345-9348 </p>
       }
     });
   </script>
-
+  <script src="js/header.js"></script>
 </body>
 
 </html>
