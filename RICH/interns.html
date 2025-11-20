@@ -247,11 +247,7 @@
 
     <!--LOAD HEADER (Header Styles Contained in header.css)-->
     <div id="header-container"></div>
-    <script>
-      fetch("header.html")
-        .then(res => res.text())
-        .then(html => document.getElementById("header-container").innerHTML = html);
-    </script>
+    
 
     <!--MADE HIDDEN-->
     <div style="top: 0px;" id="myLogo" class="site-navbar-wrap js-site-navbar bg-white" hidden>
@@ -1203,6 +1199,7 @@ END
     }
   </script>
 
+  <script src="js/header.js"></script>
 </body>
 
 </html>

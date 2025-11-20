@@ -1,0 +1,59 @@
+.overview {
+     padding-top: 50px;
+}
+
+.overview-container {
+     border: 3px solid red;
+     width: 100%;
+     display: flex;
+     gap: 40px;
+     height: max-content;
+}
+
+.left-side-container {
+     border: 3px solid black;
+     width: 55%; 
+
+}
+
+.sections {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 50px;
+     margin-bottom: 50vh;  
+}
+
+.right-side-container {
+     border: 3px solid green;
+     width: 45%;
+     top: 120px;
+     position: relative;
+}
+
+.left-side-container .sections > h1 {
+     font-size: 2.6rem;
+     font-weight: 600;
+}
+
+.left-side-container .sections > p {
+     max-width: 750px;
+     font-size: 1.5rem;
+     line-height: 1.75; 
+     text-align: left;
+     margin-top: -10px;    
+     
+}
+
+.scroll-img {
+  opacity: 0;
+  position: sticky;
+  transition: opacity .4s ease;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.scroll-img.active {
+  opacity: 1;
+  position: relative;
+}

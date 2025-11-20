@@ -29,7 +29,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
+  <!-- <style>
     .icon-links {
       text-align: center;
       font-size: 24px;
@@ -41,8 +41,10 @@
         padding-right: 55px;
       }
     }
-  </style>
+  </style> -->
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/overview.css">  
+
 </head>
 
 <body>
@@ -50,6 +52,61 @@
   <!--LOAD HEADER (Header Styles Contained in header.css)-->
   <div id="header-container"></div>
 
+
+
+    <section class="overview">
+      <div class="overview-container">
+        <div class="left-side-container">
+          <div class="sections section-1" data-img="img1">
+            <h1>Reach For Success Program</h1>
+            <p>The RICH philosophy emphasizes how affirmative language, as demonstrated in the “Reach for Success” Program, can be used as a focal point for the development of self-respect and respect for others. Students learn to model constructive language skills, using program 4 guiding principles</p>
+          </div>
+          <div class="sections section-2" data-img="img2">
+            <h1>Guiding Principles</h1>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+          </div>
+
+          <div class="sections section-3" data-img="img3">
+            <h1>Impact</h1>
+            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+          </div>
+        </div>
+
+
+        <div class="right-side-container">
+          <img id="img1" class="scroll-img" src="images/overview-image1.jpg">
+          <img id="img2" class="scroll-img" src="images/botimage.png">
+          <img id="img3" class="scroll-img" src="images/about_3.jpg">
+        </div>
+      </div>
+    </section>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const sections = document.querySelectorAll(".sections");
+  const images = document.querySelectorAll(".scroll-img");
+
+  function showImage(id) {
+    images.forEach(img => img.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+
+  window.addEventListener("scroll", () => {
+    const triggerPoint = window.innerHeight * 0.6;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top < triggerPoint && rect.bottom > triggerPoint) {
+        showImage(section.dataset.img);
+      }
+    });
+  });
+
+  showImage("img1");
+});
+</script>
 
 
 
