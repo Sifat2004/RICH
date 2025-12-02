@@ -11,7 +11,6 @@ body {
   background-color: #f6f8fc;
 }
 
-/* offset for header */
 .contact-container {
   position: relative;
   width: 100%;
@@ -25,35 +24,31 @@ body {
   z-index: 0;
 }
 
-
-/* main form */
 .form {
   width: 100%;
   max-width: 900px;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  z-index: 10;
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
+  z-index: 10;
 }
 
-/* right form panel */
+/* --- RIGHT SIDE FORM --- */
 .contact-form {
   background: linear-gradient(135deg, #162957, #1f3d82);
   position: relative;
   padding: 2.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* decorative circles */
 .circle {
   position: absolute;
   border-radius: 50%;
   z-index: 0;
-  pointer-events: none;
   mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .circle.one {
@@ -83,31 +78,29 @@ body {
   left: -13px;
 }
 
-/* input section */
-form {
-  position: relative;
-  z-index: 5;
-}
 
 .title {
   color: #fff;
   font-weight: 600;
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  z-index: 3;
 }
+
 
 .input-container {
   position: relative;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
+  z-index: 3;
 }
 
 .input {
   width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
   border-radius: 25px;
   color: #fff;
-  padding: 0.7rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
@@ -117,6 +110,12 @@ form {
   border-color: #f79533;
 }
 
+textarea.input {
+  min-height: 120px;
+  resize: none;
+}
+
+/* --- LABELS (floating) --- */
 .input-container label {
   position: absolute;
   top: 50%;
@@ -124,10 +123,13 @@ form {
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
-  transition: 0.3s;
+  background: transparent;
+  padding: 0 4px;
+  transition: 0.3s ease;
   pointer-events: none;
 }
 
+/* FLOAT ON FOCUS */
 .input:focus + label {
   top: 0;
   left: 16px;
@@ -138,14 +140,18 @@ form {
   border-radius: 4px;
 }
 
-textarea.input {
-  min-height: 120px;
-  resize: none;
-  display: flex;
-  justify-content: center;
+/* FLOAT WHEN INPUT HAS TEXT */
+.input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 16px;
+  font-size: 0.75rem;
+  color: #f79533;
+  background: #2b3e6f;
+  padding: 0 6px;
+  border-radius: 4px;
 }
 
-/* send button */
+
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -157,6 +163,7 @@ textarea.input {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 3;
 }
 
 .btn:hover {
@@ -164,7 +171,7 @@ textarea.input {
   color: #fff;
 }
 
-/* left panel info */
+/* --- LEFT SIDE INFO --- */
 .contact-info {
   padding: 2.5rem;
 }
@@ -190,7 +197,6 @@ textarea.input {
   margin-top: 6px;
 }
 
-
 .social-media {
   margin-top: 2rem;
 }
@@ -212,10 +218,9 @@ textarea.input {
   background: #f36f21;
 }
 
-/* decorative shapes */
+/* --- BACKGROUND DECORATION --- */
 .brand-logo {
   position: absolute;
-  display: block;
   width: 480px;
   height: 480px;
   border-radius: 50%;
@@ -225,7 +230,7 @@ textarea.input {
   z-index: -1;
   pointer-events: none;
   box-shadow: inset 0 0 60px rgba(13, 36, 79, 0.25);
-  animation: spin 60s linear infinite; 
+  animation: spin 60s linear infinite;
 }
 
 @keyframes spin {
@@ -235,22 +240,4 @@ textarea.input {
   to {
     transform: translate(-40%, 15%) rotate(360deg);
   }
-}
-
-.square {
-  position: absolute;
-  height: 400px;
-  top: 55%;
-  left: 50%;
-  transform: translate(160%, 20%);
-  opacity: 0.15;
-  z-index: 0;
-}
-
-.big-circle,
-.square,
-.circle {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
 }
