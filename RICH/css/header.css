@@ -1,3 +1,13 @@
+#site-header .top-header .top-links a,
+#site-header .bottom-header .nav-list a
+{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+}
+
+
 /* ===================== TOP HEADER ===================== */
 .top-header {
   display: flex;
@@ -8,18 +18,25 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+.header-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 150px;
+}
+
 .top-filler {
-  width: 805px;
+  flex: 1;
 }
 
 .top-links {
-  /* width: 900px; */
-  /* max-width: 700px; */
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
-  gap: 85px;
+  gap: 42px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -28,6 +45,7 @@
   color: white;
   font-weight: 500;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .top-links a:hover {
@@ -49,6 +67,8 @@
   transition: all 0.3s ease;
 }
 
+
+
 .nav-top-item.donate a:hover {
   background: linear-gradient(135deg, #f9a13b, #f8855d);
   transform: translateY(-2px);
@@ -63,7 +83,6 @@
 /* ===================== BOTTOM HEADER ===================== */
 .bottom-header {
   display: flex;
-  padding: 5px;
   align-items: center;
   backdrop-filter: blur(8px);
   border-bottom: 2px solid #f36f21;
@@ -80,7 +99,7 @@
 
 .bottom-header .logo-container {
   height: 80px;
-  width: 800px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,14 +111,13 @@
 }
 
 .bottom-header .main-nav {
-  flex: .7;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .bottom-header .main-nav > ul {
-  width: 750px;
+  gap: 42px;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -179,8 +197,3 @@
   transition: transform 0.25s ease;
 }
 
-@media (max-width: 1600px) {
-  .bottom-header .main-nav > ul {
-    border: 2px solid red;
-  }
-}
