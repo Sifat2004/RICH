@@ -272,13 +272,8 @@
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
 
-    <!--LOAD HEADER (Header Styles Contained in header.css)-->
+    <!--LOAD HEADER (Header Styles Contained in header.css and Header JS Contained in header.js)-->
     <div id="header-container"></div>
-    <script>
-      fetch("header.html")
-        .then(res => res.text())
-        .then(html => document.getElementById("header-container").innerHTML = html);
-    </script>
 
     <!-- Contact Section -->
 <section class="contact-container">
@@ -315,12 +310,12 @@
         </div>
       </div>
 
-      <p>
+      <!-- <p>
         <a href="https://classroom.google.com/c/NzA5NDAxOTM3MjY2?cjc=3vfpigb"
         target="_blank" rel="noopener noreferrer">
         Get a sample of our Online Classroom here
         </a>
-      </p>
+      </p> -->
 
       <div class="social-media">
         <p>Connect with us:</p>
@@ -572,7 +567,7 @@
   </footer>
   </div>
   <!--MADE HIDDEN ENDS-->
-
+  <script src="js/header.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>

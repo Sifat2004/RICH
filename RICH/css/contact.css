@@ -201,6 +201,12 @@ textarea.input {
   margin-top: 2rem;
 }
 
+.social-media p {
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .social-icons a {
   display: inline-flex;
   justify-content: center;
