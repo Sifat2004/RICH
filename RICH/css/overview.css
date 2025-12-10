@@ -3,7 +3,7 @@
   --bg-100: #faf6f0;       
   --bg-200: #f1ece4;       
   --bg-300: #e7e1d8;      
-  --card-bg: #fdfaf5;       
+  --card-bg: #f5eadb;       
   --navy: #0e1e33;         
   --gold: #d6a95c;        
   --shadow: rgba(14, 30, 51, 0.15);
@@ -62,7 +62,7 @@ p {
 }
 
 .text-area p {
-  word-spacing: 5px;
+  word-spacing: 3px;
 }
 
 
@@ -85,8 +85,8 @@ p {
   border-radius: 1.5rem;
   display: flex;
   justify-content: center;
-  margin: 4rem auto;
-  max-width: 1800px;
+  margin: auto;
+  max-width: 1700px;
   align-items: center;
   box-shadow: 0 12px 32px var(--shadow);
 }
@@ -108,6 +108,9 @@ p {
   gap: 12rem;
 }
 
+.text-area h2 {
+  white-space: nowrap;
+}
 .main-content .row {
   display: flex;
   justify-content: space-between;
