@@ -152,6 +152,12 @@ p {
   transform: translateY(0);
 }
 
+@media (max-width: 1350px) {
+  .text-area h2 {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 900px) {
   .main-content .row {
     flex-direction: column;

@@ -24,12 +24,57 @@ function initHeaderScroll() {
   onScroll();
 }
 
+/* -----------------------------------
+   MOBILE MENU INIT FUNCTION
+----------------------------------- */
+function initMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeBtn = document.getElementById('close-menu');
+
+  if (!menu || !overlay || !hamburger || !closeBtn) {
+    console.warn("Mobile menu elements not found yet.");
+    return;
+  }
+
+  // OPEN MENU
+  hamburger.addEventListener('click', () => {
+    menu.classList.add('open');
+    overlay.classList.add('visible');
+    document.body.style.overflow = "hidden";
+  });
+
+  // CLOSE MENU
+  function closeMenu() {
+    menu.classList.remove('open');
+    overlay.classList.remove('visible');
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // SUBMENU TOGGLES
+  document.querySelectorAll('.submenu-toggle').forEach(toggle => {
+    toggle.addEventListener('click', e => {
+      e.preventDefault();
+      const parent = toggle.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+}
+
+/* -----------------------------------
+   LOAD HEADER
+----------------------------------- */
 function loadHeader() {
   return fetch("header.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-container").outerHTML = html;
       initHeaderScroll();
+      initMobileMenu();
     });
 }
 

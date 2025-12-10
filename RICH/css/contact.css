@@ -82,7 +82,7 @@ body {
 .title {
   color: #fff;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   z-index: 3;
 }
@@ -195,16 +195,29 @@ textarea.input {
   color: #f36f21;
   margin-right: 0.8rem;
   margin-top: 6px;
+  font-size: 1.2rem;
 }
 
 .social-media {
-  margin-top: 2rem;
+  margin-top: 3.3rem;
 }
 
 .social-media p {
   padding: 15px 0;
   font-size: 20px;
   font-weight: bold;
+  position: relative;
+}
+
+.social-media p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: 100%;
+  height: 1px; 
+  background: #162957;
+  border-radius: 2px;
 }
 
 .social-icons a {
