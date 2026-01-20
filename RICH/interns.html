@@ -208,6 +208,12 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow:hidden;
+      text-align: left !important;
+      line-height: 1.45;
+      font-size: 14px;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+      hyphens: none !important;
     }
 
     .intern-meta{
@@ -417,6 +423,22 @@
   // =========================
   const internsRaw = [
     // ===== 2025 — Spring =====
+     {
+      name: "Mubashirul Islam",
+      role: "Front-End Developer",
+      img: "intern_images/mubashirul.jpeg",
+      tags: ["Queens College", "Computer Science"],
+      semesters: ["2025-Summer"],
+      bio: `Mubashirul Islam is a senior at Queens College, CUNY majoring in Computer Science and graduating in December 2025. During the Summer 2025 semester, he served as a Front-End Developer Intern at the RICH Organization, where he made key contributions to strengthening the organization’s digital infrastructure and enhancing its online presence. He transferred critical files from Cyberduck to GitHub to establish a secure backup system. Mubashirul worked with the executive director to improve the organization's brand identity and he modernized the RICH website. He contributed to the team creating an animated globe logo implemented across the website. By combining technical expertise with creative problem-solving, he played a vital role in optimizing both the functionality and visual presentation of RICH’s digital platforms. Mubashirul strengthened his front-end development and design skills and gained hands-on experience with website content management and Github version control. He also developed a deeper understanding of how technology supports strategic planning in nonprofit organizations.`
+    },
+     {
+      name: "Makhmud Balaev",
+      role: "Web Developer",
+      img: "intern_images/makhmud.jpeg",
+      tags: ["NYC College of Technology", "Computer Systems"],
+      semesters: ["2025-Summer"],
+      bio: `Makhmud Balaev is a student attending New York City College of Technology, majoring in Computer Systems Information. He joined RICH as a web development intern, where he contributed to the design and functionality of the organization’s online presence. Makhmud focused on improving the RICH organization’s home page, making it more engaging, accessible, and user friendly. With a strong interest in technology and problem solving, Makhmud is passionate about learning new skills, building creative solutions, and using technology to make a positive difference.`
+    },
     {
       name: "Prasamsha Gyenwali",
       role: "Web Developer",
@@ -519,7 +541,7 @@
       img: "intern_images/sadiagrad.jpeg",
       tags: ["Queens College", "Project Management"],
       semesters: ["2020–2021", "2021–2022", "2022–2023"],
-      bio: `Congratulations to our Queens College Intern, Sadia Ishak, on her graduation and remarkable accomplishments! Sadia, your work ethic, vision, creative talent, and management of the RICH organization’s website development team are extraordinary! We at RICH wish you the very best and I look forward to our continued relationship and partnership!” - Jacqueline Dawson, Ph.D. (December 2022)`
+      bio: `Sadia Ishak joined the RICH organization during her freshman year at Queens College, where she majored in Computer Science with a minor in Business Liberal Arts, and grew into the role of Web Development Project Manager overseeing the creative direction and technical execution of RICH’s website and Google Classroom platform. As a lead mentor, she supervised DOE remote interns through RICH’s online training projects, fostering a collaborative and structured web-development workspace while guiding teams toward real-world technical and professional growth. In recognition of her leadership, vision, and work ethic, Sadia was awarded the Dr. Félix V. Matos Rodríguez Internship Fund in 2020, and upon her graduation in December 2022, RICH formally celebrated her exceptional contributions and lasting impact on the organization’s digital initiatives. Sadia aspires to one day become the CEO of Google, carrying forward the skills and values she developed throughout her journey at RICH.`
     },
     {
       name: "Janeen Hyatt",
@@ -594,19 +616,28 @@
     return Array.from(new Set((arr || []).filter(Boolean)));
   }
 
+  function cleanStr(s){
+    return String(s || "").replace(/\s+/g, " ").trim();
+  }
+
+  function keyOfName(name){
+    return cleanStr(name).toLowerCase();
+  }
+
   // Show "2020–2023" if semesters are academic-year ranges like "2020–2021"
   // Otherwise show the joined list (e.g., "2025-Spring, 2024-Summer")
   function displaySemesters(semesters){
-    const list = (semesters || []).filter(Boolean);
+    const list = (semesters || []).map(cleanStr).filter(Boolean);
 
     const parsed = list
       .map(s => {
-        const m = String(s).match(/(\d{4})\s*[–-]\s*(\d{4})/);
+        const m = s.match(/(\d{4})\s*[–-]\s*(\d{4})/);
         if(!m) return null;
         return { start: parseInt(m[1], 10), end: parseInt(m[2], 10) };
       })
       .filter(Boolean);
 
+    // If ALL items are year-ranges, compress to minStart–maxEnd
     if(parsed.length === list.length && parsed.length > 0){
       const minStart = Math.min(...parsed.map(x => x.start));
       const maxEnd = Math.max(...parsed.map(x => x.end));
@@ -618,46 +649,59 @@
 
   function normalizeIntern(i){
     return {
-      name: (i.name || "").trim(),
-      role: (i.role || "").trim(),
-      img: (i.img || "").trim(),
-      tags: uniq(i.tags),
-      semesters: uniq(i.semesters),
-      bio: (i.bio || "").trim()
+      name: cleanStr(i.name),
+      role: cleanStr(i.role),
+      img: cleanStr(i.img),
+      tags: uniq((i.tags || []).map(cleanStr)).filter(Boolean),
+      semesters: uniq((i.semesters || []).map(cleanStr)).filter(Boolean),
+      bio: cleanStr(i.bio)
     };
   }
 
-  // Optional safety: merge duplicates by name (keeps one card)
+  // Merge duplicates by name (keeps one card, combines tags + semesters, keeps longer bio)
   function mergeInterns(list){
     const map = new Map();
-    for(const raw of list){
+
+    for(const raw of (list || [])){
       const i = normalizeIntern(raw);
       if(!i.name) continue;
 
-      const key = i.name.toLowerCase();
+      const key = keyOfName(i.name);
+
       if(!map.has(key)){
         map.set(key, i);
-      } else {
-        const existing = map.get(key);
+        continue;
+      }
 
-        if(!existing.role && i.role) existing.role = i.role;
-        if((!existing.img || existing.img === "") && i.img) existing.img = i.img;
+      const existing = map.get(key);
 
-        existing.tags = uniq([...(existing.tags||[]), ...(i.tags||[])]);
-        existing.semesters = uniq([...(existing.semesters||[]), ...(i.semesters||[])]);
+      if(!existing.role && i.role) existing.role = i.role;
+      if((!existing.img || existing.img === "") && i.img) existing.img = i.img;
 
-        if((i.bio || "").length > (existing.bio || "").length){
-          existing.bio = i.bio;
-        }
+      existing.tags = uniq([...(existing.tags||[]), ...(i.tags||[])]);
+      existing.semesters = uniq([...(existing.semesters||[]), ...(i.semesters||[])]);
+
+      if((i.bio || "").length > (existing.bio || "").length){
+        existing.bio = i.bio;
       }
     }
+
     return Array.from(map.values());
   }
 
+  // =========================
+  // 3) BUILD FINAL LIST
+  // =========================
   const interns = mergeInterns(internsRaw);
 
+  // Pills: unique list of all semesters across all interns
+  const allSemesters = uniq(interns.flatMap(i => i.semesters || []))
+    .sort((a, b) => b.localeCompare(a)); // simple descending sort
+
+  const pills = ["All", ...allSemesters];
+
   // =========================
-  // 3) UI STATE
+  // 4) UI STATE
   // =========================
   const grid = document.getElementById("internGrid");
   const pillsWrap = document.getElementById("yearPills");
@@ -668,27 +712,25 @@
   const mImg = document.getElementById("mImg");
   const mName = document.getElementById("mName");
   const mRole = document.getElementById("mRole");
-  const mSemesters = document.getElementById("mSemesters");
+  const mSemesters = document.getElementById("mSemesters"); // MUST exist in your modal HTML
   const mBio = document.getElementById("mBio");
   const mCloseBtn = document.getElementById("mCloseBtn");
-
-  // Pills: unique list of all semesters
-  const allSemesters = uniq(interns.flatMap(i => i.semesters || []));
-  const pills = ["All", ...allSemesters];
 
   let activeSemester = "All";
   let searchTerm = "";
 
   // =========================
-  // 4) RENDER
+  // 5) RENDER
   // =========================
   function makeSnippet(text){
-    return (text || "").replace(/\s+/g, " ").trim();
+    return cleanStr(text);
   }
 
   function renderPills(){
     pillsWrap.innerHTML = pills.map(s => `
-      <button class="year-pill ${s === activeSemester ? "active" : ""}" data-sem="${s}" type="button">
+      <button class="year-pill ${s === activeSemester ? "active" : ""}"
+              data-sem="${s}"
+              type="button">
         ${s}
       </button>
     `).join("");
@@ -706,17 +748,20 @@
     const filtered = interns.filter(i => {
       const inSem = activeSemester === "All" || (i.semesters || []).includes(activeSemester);
 
-      const hay = `${i.name} ${i.role} ${(i.semesters||[]).join(" ")} ${(i.tags||[]).join(" ")} ${i.bio}`
-        .toLowerCase();
-
+      const hay = `${i.name} ${i.role} ${(i.semesters||[]).join(" ")} ${(i.tags||[]).join(" ")} ${i.bio}`.toLowerCase();
       const inSearch = !searchTerm || hay.includes(searchTerm);
+
       return inSem && inSearch;
     });
 
     emptyState.style.display = filtered.length ? "none" : "block";
 
-    grid.innerHTML = filtered.map((i, idx) => `
-      <article class="intern-card" data-idx="${idx}" tabindex="0" role="button" aria-label="Open profile for ${i.name}">
+    grid.innerHTML = filtered.map(i => `
+      <article class="intern-card"
+               data-key="${keyOfName(i.name)}"
+               tabindex="0"
+               role="button"
+               aria-label="Open profile for ${i.name}">
         <div class="intern-media">
           <img src="${i.img}" alt="${i.name}">
         </div>
@@ -733,7 +778,12 @@
     `).join("");
 
     grid.querySelectorAll(".intern-card").forEach(card => {
-      const open = () => openModal(filtered[parseInt(card.dataset.idx, 10)]);
+      const open = () => {
+        const key = (card.dataset.key || "").toLowerCase();
+        const person = interns.find(x => keyOfName(x.name) === key);
+        openModal(person);
+      };
+
       card.addEventListener("click", open);
       card.addEventListener("keydown", (e) => {
         if(e.key === "Enter" || e.key === " "){
@@ -745,7 +795,7 @@
   }
 
   // =========================
-  // 5) MODAL
+  // 6) MODAL
   // =========================
   function openModal(i){
     if(!i) return;
@@ -755,8 +805,10 @@
     mName.textContent = i.name;
     mRole.textContent = i.role;
 
-    // Modal shows the FULL list, not the compressed range
-    mSemesters.textContent = (i.semesters || []).join(", ");
+    // This is the line you wanted: "2020–2023" instead of listing each year
+    if(mSemesters){
+      mSemesters.textContent = displaySemesters(i.semesters);
+    }
 
     mBio.textContent = i.bio;
 
@@ -771,23 +823,33 @@
     document.body.style.overflow = "";
   }
 
-  mCloseBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if(e.target === modal) closeModal();
-  });
+  if(mCloseBtn) mCloseBtn.addEventListener("click", closeModal);
+
+  if(modal){
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+  }
+
   window.addEventListener("keydown", (e) => {
-    if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    if(e.key === "Escape" && modal && modal.classList.contains("open")){
+      closeModal();
+    }
   });
 
   // =========================
-  // 6) SEARCH
+  // 7) SEARCH
   // =========================
-  searchInput.addEventListener("input", () => {
-    searchTerm = searchInput.value.toLowerCase().trim();
-    renderGrid();
-  });
+  if(searchInput){
+    searchInput.addEventListener("input", () => {
+      searchTerm = (searchInput.value || "").toLowerCase().trim();
+      renderGrid();
+    });
+  }
 
-  // init
+  // =========================
+  // 8) INIT
+  // =========================
   renderPills();
   renderGrid();
 </script>
