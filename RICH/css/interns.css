@@ -107,6 +107,7 @@
      display:grid;
      grid-template-columns: repeat(12, 1fr);
      gap: 18px;
+     align-items: stretch;
 }
 
 .intern-card{
@@ -120,6 +121,7 @@
      transition: .18s ease;
      display:flex;
      min-height: 150px;
+     max-height: 250px;
 }
 
 .intern-card:hover{

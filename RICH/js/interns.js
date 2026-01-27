@@ -17,11 +17,11 @@ const internsRaw = [
      },
      {
      name: "Zarif Islam",
-     role: "Front-End Developer",
-     img: "intern_images/zarif.png",
+     role: "Software Engineering Intern",
+     img: "intern_images/zarif2.jpeg",
      tags: ["Queens College"],
      semesters: ["2025-2026"],
-     bio: `During spring semester 25, Zarif Islam a Computer Science major at Queens College, volunteered as a Web Developer Intern at the RICH Organization. Zarif contributed to tech projects, offering technical and creative solutions. He assisted the tech team in fixing bugs on the website to improve user experience. He also spearheaded videography projects, interviewed board members and former interns, and edited and uploaded the final videos to the organization’s website and social media platforms. With a passion for storytelling and problem-solving, Zarif brings a unique blend of creativity and tech skills to the IT projects he works on.`,
+     bio: `Zarif Islam, a Computer Science student at CUNY Queens College, returned to RICH as a Team Lead and Software Engineering Intern after volunteering with the organization during the spring term 2025. In his role as project lead, he coordinates a four-person development team, overseeing deliverables for all project milestones, utilizing the centralized GitHub deployment workflow management platform. Mr. Islam architected RICH's flagship full-stack educational platform utilizing Next.js, React, and PostgreSQL, and collaborated with a Bloomberg Senior ML Engineer on database design and Google Gemini AI integration. Zarif spearheaded the redesign of the RICH organization’s visual identity, including the new logo and brand design. He presented the execution of his projects to RICH’s stakeholders: a digital data researcher, community leaders, and the RICH board director. His ongoing commitment to RICH's mission exemplifies both technical leadership and a dedication to accessible education technology.`,
      hsInterns: [
      {
           name: "Syed Ayman",
@@ -148,7 +148,7 @@ const internsRaw = [
      name: "Janeen Hyatt",
      role: "Media Communications Intern",
      img: "intern_images/janeen.png",
-     tags: ["John Jay", "Forensic Psychology", "Anthropology"],
+     tags: ["John Jay College", "Forensic Psychology"],
      semesters: ["2022–2023"],
      bio: `Janeen Hyatt, a junior majoring in Forensic Psychology and minoring in Anthropology at John Jay College of Criminal Justice, is a Media Communications intern at RICH. She managed the various RICH social media platforms during the 30th-anniversary campaign and produced, hosted, and edited the three 30th-anniversary podcast videos promoting how students and parents can use the RICH guiding principles to practice and encourage self-affirming behaviors for personal and academic success. When Janeen is not interning at RICH or dedicating time to her studies, she attends music and performing arts productions, practices digital photography and graphic design, writes poems, and spends quality time with her family and friends. With her passion for advocating for individuals with limited access to mental healthcare due to their culture, race, ethnicity, gender, and sexual orientation, Janeen aspires to be a Clinical Psychologist and Certified Behavioral Analyst.`
      },
@@ -172,7 +172,7 @@ const internsRaw = [
      name: "Nasir Freeman",
      role: "Web Developer",
      img: "intern_images/image5.jpg",
-     tags: ["Queens College", "Computer Science", "Backend"],
+     tags: ["Queens College", "Computer Science"],
      semesters: ["2020–2021", "2021–2022"],
      bio: `Nasir is an undergraduate at Queens College, majoring in Computer Science (BA). He is the backend-web developer intern for the RICH organization who oversees the organization’s server-side web application and works with the front-end developers on implementing APIs for the website. He collaborates with the web-development team to ensure the seamless integration of all applications and databases. Nasir's hobby is designing websites and practicing his web development skills. He’s been busy building basic websites since the age seven and his dream job is to become a software engineer in the game development field.`
      },
@@ -180,7 +180,7 @@ const internsRaw = [
      name: "Shriyansh Tripathi",
      role: "Web Developer",
      img: "intern_images/image7.jpg",
-     tags: ["Queens College", "Computer Science", "Mathematics"],
+     tags: ["Queens College", "Computer Science"],
      semesters: ["2021–2022"],
      bio: `Shriyansh is a sophomore at CUNY Queens college majoring in Computer Science and minoring in Mathematics. He interned at RICH back in 2020 where he created the "Snacking for Smartness" project for middle school students. He has experience in front-end and back-end web development, along with knowledge of database servers. He is an excellent problem solver who takes the initiative and ownership of projects and proactively resolves issues. Furthermore, he also has hands-on experience in Cybersecurity and Cloud technologies such as Amazon Web Services (AWS). He has a passion for tutoring in mathematics and computer science and has been doing freelancing work for the past 2 years. He aspires to become a software engineer at a FAANG company.`
      },
@@ -188,7 +188,7 @@ const internsRaw = [
      name: "Lisa Zheng",
      role: "Lead Social Media Intern",
      img: "intern_images/image2.jpg",
-     tags: ["Queens College", "Media Studies", "Business"],
+     tags: ["Queens College", "Media Studies"],
      semesters: ["2020–2021"],
      bio: `Lisa is a senior attending Queens College where she is majoring in Media Studies with a minor in Business and Liberal Arts. She is the lead social media intern at RICH where she interviews RICH graduates, guides RICH's high school interns in accomplishing their internship goals, and creates social media campaigns that advertise the success of these efforts. One of the campaigns that she worked on, "Then & Now", is featured on the RICH website and social media pages. She wants to be an experiential event manager or a brand manager in the future. RICH has made Lisa realize how important it is for youth to be self-aware and know that they matter in order to achieve their life and school goals.`
      },
@@ -196,7 +196,7 @@ const internsRaw = [
      name: "Hannah Fischbein",
      role: "Social Media Intern",
      img: "intern_images/image4.jpg",
-     tags: ["Queens College", "Advertising", "Business"],
+     tags: ["Queens College", "Advertising"],
      semesters: ["2020–2021"],
      bio: `Hannah is a Freshman at Queens College, majoring in Advertising and minoring in Business and Liberal Arts. She is the lead campaign builder at RICH, where she works with the Product Manager to shape the direction of social media. Hannah crafts creative ideas and develops, produces, and manages social media and ad campaigns, such as the "Then & Now" campaign, Black History Month, and the Reach for Success podcast publicity. RICH has given Hannah experience with the ins and outs of the social media marketing industry and provided the invaluable opportunity to be a lead mentor for DOE interns. She plans to expand her career by entering other areas of marketing, such as product and brand marketing.`
      },
@@ -204,7 +204,7 @@ const internsRaw = [
      name: "Hassan Amjad",
      role: "Web Developer",
      img: "intern_images/image3.jpg",
-     tags: ["Queens College", "Computer Science", "Web Dev"],
+     tags: ["Queens College", "Web Dev"],
      semesters: ["2020–2021"],
      bio: `Hassan is currently a junior at Queens College who is pursuing a Bachelors in Computer Science. He is passionate about pursuing a career in web development and has experienced various internships in this field, as well as participated in several projects and hackathons. He is currently working on expanding his web and iOS development skills. RICH has given him a chance to implement and expand his front-end web-development skills in a remote work-based environment. Hassan also worked with the RICH back-end developer to implement the "Then & Now" webpage. His vision is to build his own startup one day.`
      }
