@@ -1932,3 +1932,12 @@
   };
 
 }());
+
+// jQuery plugin wrapper for compatibility
+if (typeof jQuery !== 'undefined' && window.Chocolat) {
+  jQuery.fn.Chocolat = function(options) {
+    return this.each(function() {
+      new window.Chocolat(this, options);
+    });
+  };
+}
