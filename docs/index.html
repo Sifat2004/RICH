@@ -1681,7 +1681,7 @@
     function checkLogin() {
 
       if (userInfo == "" || userInfo == "undefined") {
-        window.location.href = "login.php";
+        window.location.href = "login.html";
       }
       else {
         window.location.href = "Account/portal-home.html";
@@ -1816,21 +1816,38 @@
     }
 
     function getUserInfo() {
-      mode = "getInfo";
+      // Initialize userInfo to empty string for static hosting (GitHub Pages)
+      userInfo = "";
+      
+      try {
+        mode = "getInfo";
 
-      var xhttp = new XMLHttpRequest();
-      var url = "php/UsersRICH.php";
-      var params = "mode=" + mode;
+        var xhttp = new XMLHttpRequest();
+        var url = "php/UsersRICH.php";
+        var params = "mode=" + mode;
 
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          userInfo = this.responseText;
-        }
-      };
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            userInfo = this.responseText;
+          } else if (this.readyState == 4 && this.status !== 200) {
+            // If PHP endpoint doesn't exist (like on GitHub Pages), set userInfo to empty
+            userInfo = "";
+          }
+        };
 
-      xhttp.open("POST", url, false);
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send(params);
+        xhttp.onerror = function() {
+          // Handle network errors gracefully
+          userInfo = "";
+        };
+
+        // Use async request to prevent blocking the page
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(params);
+      } catch (e) {
+        // Handle errors gracefully for static hosting (GitHub Pages)
+        userInfo = "";
+      }
     }
 
 
