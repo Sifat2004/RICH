@@ -100,7 +100,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/login.css">  
+  <!-- <link rel="stylesheet" href="css/login.css">   -->
 </head>
 
 <body>
@@ -118,16 +118,16 @@
 
 
     <!--LOAD HEADER (Header Styles Contained in header.css)-->
-    <div id="header-container"></div>
+    <!-- <div id="header-container"></div>
     <script>
       fetch("header.html")
         .then(res => res.text())
         .then(html => document.getElementById("header-container").innerHTML = html);
-    </script>
+    </script> -->
 
 
   <!-- Login Section -->
-<section class="login-wrapper">
+<section class="login-wrapper" hidden>
   <div class="login-box">
     <h2>Welcome Back to RICH</h2>
     <p>Log in to access the RICH Portal and continue reaching new heights.</p>
@@ -165,7 +165,7 @@
 </section>
 
     <!--MADE HIDDEN-->
-    <div style="top: 0px;" id="myLogo" class="site-navbar-wrap js-site-navbar bg-white" hidden>
+    <div style="top: 0px;" id="myLogo" class="site-navbar-wrap js-site-navbar bg-white">
 
 
 
@@ -285,8 +285,8 @@
       </div>
     </div>
 
-    <div id="logoHeight" style="height: 350px;" hidden></div>
-    <div id="footerSpacing" class="text-center" hidden>
+    <div id="logoHeight" style="height: 350px;" ></div>
+    <div id="footerSpacing" class="text-center" >
       <div id="piaContainer" class="container">
 
         <div class="col-md-8 mx-auto no-sidebar">
