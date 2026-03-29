@@ -12,8 +12,10 @@ const internsRaw = [
      {
           name: "Sophia Kalesioris",
           img: "intern_images/S.jpg",
-          bio: `A senior at Thomas A. Edison CTE High School with experience in cybersecurity and web development. During his time at RICH, he worked closely in a small team with a college intern, Shakil, contributing ideas and assisting in the redesign of several webpages on the organization’s website. Together, they successfully redesigned the Program Overview page, giving it a more modern and engaging look, and plan to apply the same improvements to additional pages, including the RICH Learning System, Donation Page, Portal Login Page, and Parents Investment Alliance Page. Through this experience, he gained valuable insight into his personal strengths by applying RICH’s core principles to every aspect of his work. The internship also allowed him to significantly strengthen his teamwork and collaboration skills. Working on these projects further deepened his interest in web development, motivating him to pursue more opportunities to refine his technical abilities while continuing to apply RICH’s four core principles to achieve success.`
-     },
+          bio: `To be filled in`
+     }
+    ]
+   },
      // ===== 2025 — Summer =====
      {
      name: "Shakil Nabil",
