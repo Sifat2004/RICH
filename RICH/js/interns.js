@@ -14,7 +14,7 @@ const internsRaw = [
           img: "intern_images/S.jpg",
           bio: `To be filled in`
      }
-    ]
+    ] 
    },
      // ===== 2025 — Summer =====
      {
