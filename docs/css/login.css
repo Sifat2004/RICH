@@ -1,14 +1,62 @@
+/* Wrapper */
+.login-top-nav {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  /* z-index: 3; */
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* Logo */
+.login-logo img {
+  width: 110px;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.login-logo:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Text link */
+.login-home-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: rgba(220, 235, 255, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.login-home-link:hover {
+  color: #fde54d;
+  transform: translateX(4px);
+}
+
 .login-portal-section {
   min-height: 100vh;
   background: #0d1734;
   padding: 3rem 0;
+  overflow: hidden;
+}
+
+.login-portal-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .login-portal-card {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 550px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -19,6 +67,7 @@
   padding: 0;
 }
 
+/* Left Panel */
 .login-info-panel {
   position: relative;
   min-height: 100%;
@@ -71,6 +120,14 @@
   margin-bottom: 1.25rem;
 }
 
+.portal-subtitle {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 420px;
+}
+
 .portal-feature-list {
   list-style: none;
   padding: 0;
@@ -97,12 +154,25 @@
   background: #f36f21;
 }
 
+/* Right Panel */
 .login-form-panel {
   background: linear-gradient(135deg, #162957, #1f3d82);
   padding: 2.5rem;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.login-form-panel::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #2b3e6f;
+  transform: rotate(45deg);
+  top: 50px;
+  left: -13px;
+  z-index: 3;
 }
 
 .login-form {
@@ -127,6 +197,7 @@
   letter-spacing: 0.08em;
 }
 
+/* Inputs */
 .input-container {
   position: relative;
   margin-bottom: 1.4rem;
@@ -231,7 +302,7 @@
 .circle.three {
   width: 65px;
   height: 65px;
-  top: 450px;
+  top: 500px;
   left: -30px;
   background: rgba(173, 216, 230, 0.50);
 }
@@ -308,5 +379,183 @@
   .portal-title,
   .login-heading {
     font-size: 1.7rem;
+  }
+
+  .portal-subheading {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+}
+
+/* Tablet Viewport */
+@media (max-width: 991.98px) {
+  .login-portal-section {
+    padding-top: 5.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .login-top-nav {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    z-index: 4;
+  }
+
+  .login-logo img {
+    width: 95px;
+  }
+
+  .login-home-link {
+    font-size: .85rem;
+  }
+
+  .login-info-panel, .login-form-panel {
+    padding: 2rem;
+  }
+
+  .portal-title, .login-heading {
+    font-size: 1.7rem;
+  }
+
+  .portal-subtitle {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .login-form-panel::before {
+    display: none;
+  }
+
+  .space-ship {
+    width: 130px;
+    top: 10%;
+    left: 68%;
+    opacity: .9;
+  }
+}
+
+/* Mobile < less than tablet */
+@media (max-width: 767.98px) {
+  .login-portal-section {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  .login-top-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .85rem 1rem;
+    background: rgba(255,255,255, .14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255, .18);
+  }
+
+  .login-logo img {
+    width: 84px;
+  }
+
+  .login-home-link {
+    font-size: .82rem;
+    color: #fff;
+  }
+
+  .login-home-link:hover {
+    color: #fde54d;
+    transform: none;
+  }
+
+  .login-portal-card {
+    min-height: auto;
+    border-radius: 10px;
+  }
+
+  /* Collapse left panel to title only */
+  .login-info-panel {
+    min-height: auto;
+    padding: 1.25rem 1.25rem .75rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .login-bg-image, .login-overlay, .portal-feature-list {
+    display: none;
+  }
+
+  .login-info-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .portal-title {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+   .portal-subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .login-form-panel {
+    padding: 1.5rem;
+  }
+
+  .login-heading {
+    font-size: 1.5rem;
+  }
+
+  .formlink, .input {
+    font-size: .95rem;
+  }
+
+  .space-ship {
+    width: 100px;
+    top: 8%;
+    left: 70%;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 575.98px) {
+  .login-portal-section {
+    padding-top: 4.75rem;
+  }
+
+  .login-info-panel,
+  .login-form-panel {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .portal-title,
+  .login-heading {
+    font-size: 1.35rem;
+  }
+
+  .portal-title {
+    margin-bottom: 12px
+  }
+
+  .circle.one,
+  .circle.two,
+  .circle.three {
+    display: none;
+  }
+
+  .space-ship {
+    width: 80px;
+    top: 7%;
+    left: 72%;
   }
 }
