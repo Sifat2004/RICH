@@ -54,9 +54,9 @@
 
 .login-portal-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  min-height: 550px;
+  min-height: 575px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -128,6 +128,10 @@
   max-width: 420px;
 }
 
+.portal-principles {
+  margin: 2rem 0;
+}
+
 .portal-feature-list {
   list-style: none;
   padding: 0;
@@ -152,6 +156,14 @@
   height: 8px;
   border-radius: 50%;
   background: #f36f21;
+}
+
+.portal-content {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #162957;
 }
 
 /* Right Panel */
@@ -179,14 +191,18 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .login-heading {
   text-align: center;
   color: #fff;
   font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.3rem;
+  margin-bottom: 3rem;
 }
 
 .login-subheading {
@@ -202,6 +218,7 @@
   position: relative;
   margin-bottom: 1.4rem;
 }
+
 
 .input {
   width: 100%;
@@ -229,6 +246,10 @@
   transition: 0.3s ease;
   pointer-events: none;
   padding: 0 4px;
+} 
+
+.password-input {
+  margin-bottom: 2.5rem;
 }
 
 .input:focus + label,
@@ -286,25 +307,25 @@
 .circle.one {
   width: 130px;
   height: 130px;
-  top: 100px;
-  right: 0px;
+  top: 110px;
+  right: 15px;
   background: rgba(255, 255, 255, 0.08);
 }
 
 .circle.two {
   width: 80px;
   height: 80px;
-  top: 10px;
-  right: 30px;
+  top: 20px;
+  right: 40px;
   background: rgba(173, 216, 230, 0.25);
 }
 
 .circle.three {
-  width: 65px;
-  height: 65px;
+  width: 200px;
+  height: 200px;
   top: 500px;
-  left: -30px;
-  background: rgba(173, 216, 230, 0.50);
+  left: -75px;
+  background: rgba(173, 216, 230, 0.15);
 }
 
 .login-form-panel::before {

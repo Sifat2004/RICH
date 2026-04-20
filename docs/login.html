@@ -163,8 +163,9 @@
                       The RICH Online Portal is designed to empower you!
                     </h3>
 
-                    <h4 class="portal-subtitle">
-                      Level up with the RICH 4 Guiding Principles! Happy Learning!
+                   <div class="portal-principles">
+                     <h4 class="portal-subtitle">
+                      Level up with the RICH 4 Guiding Principles!
                     </h4>
 
                     <ul class="portal-feature-list">
@@ -173,6 +174,11 @@
                       <li>I am Considerate</li>
                       <li>I use Thinking Strategies</li>
                     </ul>
+                   </div>
+
+                    <p class="portal-content">
+                       Happy Learning!
+                    </p>
                   </div>
                 </div>
                </div>
@@ -186,15 +192,15 @@
                   <span class="circle three"></span>
 
                   <form action="Account/portal-home.html" class="login-form" onsubmit="return Login()">
-                    <h2 class="login-heading">SIGN IN</h2>
-                    <p class="login-subheading">Students</p>
+                    <h2 class="login-heading">STUDENT LOG IN</h2>
+                    <!-- <p class="login-subheading">Students</p> -->
 
-                    <div class="input-container">
+                    <div class="input-container email-input">
                       <input type="email" class="input" id="uEmail" placeholder=" " required>
                       <label for="uEmail">Username</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container password-input">
                       <input type="password" class="input" id="uPass" placeholder=" " required>
                       <label for="uPass">Password</label>
                     </div>
@@ -204,7 +210,7 @@
                     </div>
 
                     <div class="login-links mb-3">
-                  <a class="formlink" href="loginAdmin.html">Go To Administrator Account</a>
+                  <a class="formlink" href="loginAdmin.html">Click Here for Staff Login.</a>
                 </div>
 
                     <button type="submit" class="btn login-btn">Sign In</button>
